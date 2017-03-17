@@ -1,28 +1,42 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Home
+---
 
-<html>
-<head>
-    <title>jvp.digital github page</title>
-    <!--script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
-    <link rel='stylesheet' id='bootstrap'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' type='text/css' media='all' />
-</head>
+<!-- Show last 5 posts here -->
+{% for post in paginator.posts %}
+	<article>
 
-<body>
+        <header>
+            <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
+            <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
+            <span class="category"><i class="icon-tag"></i> {{ post.categories | category_links }}</span><br/>
+            <span class="author"><i class="icon-user"></i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>
+        </header>
+	
+		<div class="entry">{{ post.excerpt }}</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-3">
-            
-        </div>
-        <div class="col-sm-6 text-center">
-            <img src="/img/jvp-logo-full.png" alt="jvp.digital logo" />
-            <h1>This is where it all begins.</h1>
-        </div>
-        <div class="col-sm-3">
-            
-        </div>
-    </div>
+	</article>
+{% endfor %}
+
+
+<div id="paginator">
+    {% if paginator.next_page %}
+            <a href="{{site.baseurl}}/page{{paginator.next_page}}">
+            &laquo; Older Posts</a>
+    {% endif %}
+
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+                <span class="more">
+                <a href="{{site.baseurl}}/">
+                Newer Posts &raquo; </a>
+                </span>
+        {% else %}
+                <span class="more">
+                <a href="{{site.baseurl}}/page{{paginator.previous_page}}">
+                Newer Posts &raquo; </a>
+                </span>
+        {% endif %}
+    {% endif %}
 </div>
-
-</body>
-</html>
