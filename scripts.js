@@ -53,9 +53,14 @@ $('document').ready(function(){
     
     function changeSections(){
         $current = $("section.current");
-        if(direction == "down"){
-            $current.next("section.future").removeClass("future").addClass("current");
+        $next = $current.next("section.future");
+        $prev = $current.prev("section.past");
+        if(direction == "down" && $next.length){
+            $next.removeClass("future").addClass("current");
             $current.removeClass("current").addClass("past");
+        } else if(direction == "up" && $prev.length){
+            $prev.removeClass("past").addClass("current");
+            $current.removeClass("current").addClass("future");
         }
     }
 });
