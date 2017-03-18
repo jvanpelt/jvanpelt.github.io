@@ -7,6 +7,7 @@ $('document').ready(function(){
     var initY;
    
     function disableScrolling(){
+        console.log("disable");
         window.onscroll=function(e){
             window.scrollTo(0, 1);
             scrollAction(e);
@@ -14,9 +15,11 @@ $('document').ready(function(){
     }
     
     function enableScrolling(){
+        console.log("enable");
         //var x=window.scrollX;
-        var y=window.scrollY;
+        //var y=window.scrollY;
         window.onscroll=function(){
+            console.log("scroll y: " + window.scrollY);
             if(!initY){
                 initY = window.scrollY;
             } else if (window.scrollY > initY + 5 || window.scrollY < initY - 5){
