@@ -2,12 +2,11 @@ $('document').ready(function(){
     
     disableScrolling();
     var isScrolling = false;
-    var scrollTimer;
    
     function disableScrolling(){
         var x=window.scrollX;
         var y=window.scrollY;
-        window.onscroll = function(){
+        window.onscroll=function(){
             window.scrollTo(x, y);
             scrollAction();
         };
