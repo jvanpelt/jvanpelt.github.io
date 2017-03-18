@@ -143,6 +143,8 @@ section address {
 
 section {
     height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     position: absolute;
