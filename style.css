@@ -148,7 +148,7 @@ section {
     position: absolute;
     top: 110vh;
     left: 0px;
-    transition: top 700ms cubic-bezier(.3,.08,.35,1.25);
+    transition: top 700ms cubic-bezier(.44,.13,.57,1.07);
 }
 
 section.past{

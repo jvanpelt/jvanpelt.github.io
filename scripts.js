@@ -1,11 +1,12 @@
 $('document').ready(function(){
     
-    enableScrolling();
     var isScrolling = false;
     var scrollTimer;
     var initY;
     var direction = "";
     var play = 4; // without a little play scroll up detection stops working
+    
+    enableScrolling();
    
     function disableScrolling(){
         console.log("disable");
@@ -18,19 +19,22 @@ $('document').ready(function(){
     
     function enableScrolling(){
         console.log("enable");
+        initY = null;
+        isScrolling = false;
+        direction = "";
+        
         window.scrollTo(0, play);
         window.onscroll=function(){
             if(!initY){
                 initY = play;
             } else if (window.scrollY > initY){
                 direction = "down";
-                console.log("direction: " + direction);
                 disableScrolling();
             } else if(window.scrollY < initY){
                 direction = "up";
-                console.log("direction: " + direction);
                 disableScrolling();
             }
+            console.log("direction: " + direction);
         };
     }
     
@@ -43,12 +47,7 @@ $('document').ready(function(){
         }
         
         clearTimeout(scrollTimer);
-        
-        scrollTimer = setTimeout(function(){
-            initY = null;
-            isScrolling = false;
-            enableScrolling();
-        },100);
+        scrollTimer = setTimeout(enableScrolling,100);
     }
     
     function changeSections(){
