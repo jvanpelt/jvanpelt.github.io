@@ -142,7 +142,9 @@ section address {
     margin-left: 80%;
 }
 
-
+.main{
+    height: 100vh;
+}
 
 
 section {
@@ -174,4 +176,8 @@ section.future{
 section .row{
     display: flex;
     align-items: center;
+}
+
+.img-responsive{
+    max-height: 80vh;
 }
