@@ -4,6 +4,14 @@ body {
     color:#564b47;
 }
 
+body > header{
+    position: fixed;
+    height: 100px;
+    background: #fff;
+    z-index: 999;
+    width: 100%;
+}
+
 body>header h1>a {
     color:#564b47;
     text-decoration: none;
@@ -128,4 +136,13 @@ section address {
 
 .more {
     margin-left: 80%;
+}
+
+
+
+
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
