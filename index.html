@@ -3,40 +3,69 @@ layout: default
 title: Home
 ---
 
-<!-- Show last 5 posts here -->
-{% for post in paginator.posts %}
-	<article>
+<section id="#">
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <p>Initial setup is simple: create a new GitHub repository named ansible.github.io</p>
 
-        <header>
-            <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-            <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
-            <span class="category"><i class="icon-tag"></i> {{ post.categories | category_links }}</span><br/>
-            <span class="author"><i class="icon-user"></i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>
-        </header>
-	
-		<div class="entry">{{ post.excerpt }}</div>
+				<p>This can be done to create user, organization or project pages. </p>
+        </div>
+    </div>
+</section>
 
-	</article>
-{% endfor %}
+<section>
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <p>This is just like any other server directory at this point, in which we can drop html, css, js, and images.</p>
 
+				<p>There are also templating systems.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div id="paginator">
-    {% if paginator.next_page %}
-            <a href="{{site.baseurl}}/page{{paginator.next_page}}">
-            &laquo; Older Posts</a>
-    {% endif %}
+<section>
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <p>Using GitHub to host org and project sites appears to be quite common among the most active GitHub projects. </p>
 
-    {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-                <span class="more">
-                <a href="{{site.baseurl}}/">
-                Newer Posts &raquo; </a>
-                </span>
-        {% else %}
-                <span class="more">
-                <a href="{{site.baseurl}}/page{{paginator.previous_page}}">
-                Newer Posts &raquo; </a>
-                </span>
-        {% endif %}
-    {% endif %}
-</div>
+				<p>In some cases, projectname.github.io hosts the main website or a landing page.</p>
+				
+				<p>Another common scenario is orgs using GitHub pages to host their docs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                
+            </div>
+        </div>
+    </div>
+</section>
