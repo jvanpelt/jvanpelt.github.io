@@ -7,9 +7,9 @@ $('document').ready(function(){
     function disableScrolling(){
         var x=window.scrollX;
         var y=window.scrollY;
-        window.onscroll=function(){
+        window.onscroll=function(e){
             window.scrollTo(0, 1);
-            scrollAction();
+            scrollAction(e);
         };
     }
     
@@ -17,8 +17,12 @@ $('document').ready(function(){
         window.onscroll=function(){};
     }
     
-    function scrollAction(){
+    function scrollAction(e){
         console.log("trying to scroll");
+        
+        if(!isScrolling){
+            console.log(e);
+        }
         
         isScrolling = true;
         clearTimeout(scrollTimer);
