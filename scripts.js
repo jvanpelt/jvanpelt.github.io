@@ -3,12 +3,10 @@ $('document').ready(function(){
     enableScrolling();
     var isScrolling = false;
     var scrollTimer;
-    var initX;
+    //var initX;
     var initY;
    
     function disableScrolling(){
-        var x=window.scrollX;
-        var y=window.scrollY;
         window.onscroll=function(e){
             window.scrollTo(0, 1);
             scrollAction(e);
@@ -16,13 +14,12 @@ $('document').ready(function(){
     }
     
     function enableScrolling(){
-        var x=window.scrollX;
+        //var x=window.scrollX;
         var y=window.scrollY;
         window.onscroll=function(){
             if(!initY){
-                initX = x;
-                initY = y;
-            } else if (y > initY + 5 || y < initY - 5){
+                initY = window.scrollY;
+            } else if (window.scrollY > initY + 5 || window.scrollY < initY - 5){
                 disableScrolling();
             }
         };
