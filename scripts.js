@@ -52,13 +52,16 @@ $('document').ready(function(){
     }
     
     function changeSections(){
-        $current = $("section.current");
-        $next = $current.next("section.future");
-        $prev = $current.prev("section.past");
+        var $current = $("section.current");
+        var $next = $current.next("section.future");
+        var $prev = $current.prev("section.past");
+        
         if(direction == "down" && $next.length){
+            console.log("go down");
             $next.removeClass("future").addClass("current");
             $current.removeClass("current").addClass("past");
         } else if(direction == "up" && $prev.length){
+            console.log("go up");
             $prev.removeClass("past").addClass("current");
             $current.removeClass("current").addClass("future");
         }
