@@ -1,6 +1,6 @@
 $('document').ready(function(){
     
-    disableScrolling();
+    enableScrolling();
     var isScrolling = false;
     var scrollTimer;
     var initX;
@@ -19,7 +19,7 @@ $('document').ready(function(){
         var x=window.scrollX;
         var y=window.scrollY;
         window.onscroll=function(){
-            if(!initX){
+            if(!initY){
                 initX = x;
                 initY = y;
             } else if (y > initY + 5 || y < initY - 5){
