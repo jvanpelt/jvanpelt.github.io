@@ -1,17 +1,30 @@
 $('document').ready(function(){
     
     disableScrolling();
+    var isScrolling = false;
+    scrollTimer;
    
     function disableScrolling(){
-        var x=window.scrollX;
-        var y=window.scrollY;
-        window.onscroll=function(){
-            console.log("trying to scroll, anyway");
-            window.scrollTo(x, y);
-        };
+        window.onscroll = scrollAction;
     }
     
     function enableScrolling(){
         window.onscroll=function(){};
+    }
+    
+    function scrollAction(){
+        var x=window.scrollX;
+        var y=window.scrollY;
+        window.scrollTo(x, y);
+        
+        console.log("trying to scroll");
+        
+        isScrolling = true;
+        clearTimeout(scrollTimer);
+        
+        scrollTimer = setTimeout(function(){
+            isScrolling = false;
+            console.log("scrolling is done!");
+        },100);
     }
 });
