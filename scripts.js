@@ -10,7 +10,7 @@ $('document').ready(function(){
         console.log("disable");
         window.onscroll=function(e){
             window.scrollTo(0, 1);
-            scrollAction(e);
+            scrollAction();
         };
     }
     
@@ -22,18 +22,17 @@ $('document').ready(function(){
         window.onscroll=function(){
             console.log("scroll y: " + window.scrollY);
             if(!initY){
-                initY = window.scrollY;
+                initY = 1;
             } else if (window.scrollY > initY + 5 || window.scrollY < initY - 1){
                 disableScrolling();
             }
         };
     }
     
-    function scrollAction(e){
+    function scrollAction(){
         console.log("trying to scroll");
         
         if(!isScrolling){
-            console.log(e);
         }
         
         isScrolling = true;
