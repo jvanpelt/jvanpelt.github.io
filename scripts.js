@@ -3,19 +3,29 @@ $('document').ready(function(){
     disableScrolling();
     var isScrolling = false;
     var scrollTimer;
+    var initX;
+    var initY;
    
     function disableScrolling(){
         var x=window.scrollX;
         var y=window.scrollY;
         window.onscroll=function(e){
-            console.log("y: " + y);
-            window.scrollTo(0, 0);
+            window.scrollTo(0, 1);
             scrollAction(e);
         };
     }
     
     function enableScrolling(){
-        window.onscroll=function(){};
+        var x=window.scrollX;
+        var y=window.scrollY;
+        window.onscroll=function(){
+            if(!initX){
+                initX = x;
+                initY = y;
+            } else if (y > initY + 5 || y < initY - 5){
+                disableScrolling();
+            }
+        };
     }
     
     function scrollAction(e){
@@ -31,7 +41,7 @@ $('document').ready(function(){
         scrollTimer = setTimeout(function(){
             isScrolling = false;
             console.log("scrolling is done!");
-            window.scrollTo(0, 1);
+            enableScrolling();
         },100);
     }
 });
