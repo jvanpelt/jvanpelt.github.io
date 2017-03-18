@@ -21,6 +21,7 @@ function disableScroll() {
 }
 
 function preventDefault(e) {
+    console.log("prevent scroll");
     e = e || window.event;
     if (e.preventDefault){
         e.preventDefault();
