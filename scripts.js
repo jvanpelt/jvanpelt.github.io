@@ -2,7 +2,7 @@ $('document').ready(function(){
     
     disableScrolling();
     var isScrolling = false;
-    scrollTimer;
+    var scrollTimer;
    
     function disableScrolling(){
         window.onscroll = scrollAction;
