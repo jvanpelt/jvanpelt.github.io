@@ -26,6 +26,10 @@ h1,h2,h3,h4 {
     min-width: 840px;
 }
 
+p{
+    margin-bottom: 5vh;
+}
+
 hr {
     margin-left: 0;
     padding-left: 0;
