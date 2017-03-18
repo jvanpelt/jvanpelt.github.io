@@ -145,12 +145,20 @@ section {
     height: 100vh;
     display: flex;
     align-items: center;
-    /*position: absolute;
-    top: -120vh;*/
+    position: absolute;
+    top: 110vh;
     left: 0px;
     transition: top 700ms cubic-bezier(.3,.08,.35,1.25);
 }
 
-section.active{
+section.past{
+    top: -110vh;
+}
+
+section.current{
     top: 0px;
+}
+
+section.future{
+    top: 110vh;
 }

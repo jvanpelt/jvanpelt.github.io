@@ -5,7 +5,7 @@ $('document').ready(function(){
     var scrollTimer;
     var initY;
     var direction = "";
-    var play = 3; // without a little play scroll up detection stops working
+    var play = 4; // without a little play scroll up detection stops working
    
     function disableScrolling(){
         console.log("disable");
@@ -38,9 +38,10 @@ $('document').ready(function(){
         console.log("I'M NOT SCROLLING");
         
         if(!isScrolling){
+            isScrolling = true;
+            changeSections();
         }
         
-        isScrolling = true;
         clearTimeout(scrollTimer);
         
         scrollTimer = setTimeout(function(){
@@ -48,5 +49,13 @@ $('document').ready(function(){
             isScrolling = false;
             enableScrolling();
         },100);
+    }
+    
+    function changeSections(){
+        $current = $("section.current");
+        if(direction == "down"){
+            $current.next("section.future").removeClass("future").addClass("current");
+            $current.removeClass("current").addClass("past");
+        }
     }
 });
