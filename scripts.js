@@ -1,7 +1,7 @@
-$(document).ready(function(){
+$('document').ready(function(){
    
     var isScrolling = false;
-    $(document).on("scroll",function(){
+    $('body').on("scroll",function(){
         isScrolling = true;
         console.log("shit is scrolling!!");
     });
