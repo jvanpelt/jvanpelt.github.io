@@ -9,20 +9,18 @@ $('document').ready(function(){
     function disableScrolling(){
         console.log("disable");
         window.onscroll=function(e){
-            window.scrollTo(0, 1);
+            window.scrollTo(0, 2);
             scrollAction();
         };
     }
     
     function enableScrolling(){
         console.log("enable");
-        window.scrollTo(0, 1);
-        //var x=window.scrollX;
-        //var y=window.scrollY;
+        window.scrollTo(0, 2);
         window.onscroll=function(){
             console.log("scroll y: " + window.scrollY);
             if(!initY){
-                initY = 1;
+                initY = 2;
             } else if (window.scrollY > initY + 5 || window.scrollY < initY){
                 disableScrolling();
             }
