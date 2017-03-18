@@ -5,7 +5,12 @@ $('document').ready(function(){
     var scrollTimer;
    
     function disableScrolling(){
-        window.onscroll = scrollAction;
+        var x=window.scrollX;
+        var y=window.scrollY;
+        window.onscroll = function(){
+            window.scrollTo(x, y);
+            scrollAction();
+        };
     }
     
     function enableScrolling(){
@@ -13,10 +18,6 @@ $('document').ready(function(){
     }
     
     function scrollAction(){
-        var x=window.scrollX;
-        var y=window.scrollY;
-        window.scrollTo(x, y);
-        
         console.log("trying to scroll");
         
         isScrolling = true;
