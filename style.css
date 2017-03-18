@@ -6,7 +6,7 @@ body {
 
 body > header{
     position: fixed;
-    height: 100px;
+    height: 10vh;
     background: #fff;
     z-index: 999;
     width: 100%;
@@ -142,8 +142,10 @@ section address {
 
 
 section {
+    width: 100%;
     height: 100vh;
     max-height: 100vh;
+    padding-top: 10vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -163,4 +165,9 @@ section.current{
 
 section.future{
     top: 110vh;
+}
+
+section .row{
+    display: flex;
+    align-items: center;
 }
