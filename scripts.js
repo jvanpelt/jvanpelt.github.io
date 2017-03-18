@@ -40,6 +40,7 @@ $('document').ready(function(){
         clearTimeout(scrollTimer);
         
         scrollTimer = setTimeout(function(){
+            initY = null;
             isScrolling = false;
             console.log("scrolling is done!");
             enableScrolling();
