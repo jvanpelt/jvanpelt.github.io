@@ -40,6 +40,7 @@ $('document').ready(function(){
             initY = null;
             isScrolling = false;
             console.log("scrolling is done!");
+            console.log("scroll y: " + window.scrollY);
             enableScrolling();
         },100);
     }
