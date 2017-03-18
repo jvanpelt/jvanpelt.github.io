@@ -16,6 +16,7 @@ $('document').ready(function(){
     
     function enableScrolling(){
         console.log("enable");
+        window.scrollTo(0, 1);
         //var x=window.scrollX;
         //var y=window.scrollY;
         window.onscroll=function(){
@@ -41,7 +42,6 @@ $('document').ready(function(){
         scrollTimer = setTimeout(function(){
             isScrolling = false;
             console.log("scrolling is done!");
-            window.scrollTo(0, 1);
             enableScrolling();
         },100);
     }
