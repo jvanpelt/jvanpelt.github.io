@@ -23,7 +23,7 @@ $('document').ready(function(){
             console.log("scroll y: " + window.scrollY);
             if(!initY){
                 initY = 1;
-            } else if (window.scrollY > initY + 5 || window.scrollY < initY - 1){
+            } else if (window.scrollY > initY + 5 || window.scrollY < initY){
                 disableScrolling();
             }
         };
