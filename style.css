@@ -173,6 +173,7 @@ section {
 section.title-card{
     background: #c00;
     color: #fff;
+    text-align: center;
 }
 
 section.title-card h1,
